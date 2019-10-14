@@ -25,11 +25,11 @@
 var fs = require('fs');
 var path = require('path');
 var URI = require('url');
+var et = require('elementtree');
 var old_content_src_value;
 
 module.exports = function(context) {
     var config_xml = path.join(context.opts.projectRoot, 'config.xml');
-    var et = context.requireCordovaModule('elementtree');
 
     var data = fs.readFileSync(config_xml).toString();
     var etree = et.parse(data);
